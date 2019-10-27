@@ -41,6 +41,10 @@ jQuery(function() {
         // 所有文件的进度信息，key为file id
         percentages = {},
 
+        // markdown 图片url连接文本框
+
+        // markdown 复制按钮
+
         supportTransition = (function(){
             var s = document.createElement('p').style,
                 r = 'transition' in s ||
@@ -59,6 +63,18 @@ jQuery(function() {
         alert( 'Web Uploader 不支持您的浏览器！如果你使用的是IE浏览器，请尝试升级 flash 播放器');
         throw new Error( 'WebUploader does not support the browser you are using.' );
     }
+    //复制markdown url
+    $('#btn_mk').click(function () {
+        var url = document.getElementById("mk");
+        url.select();//选择对象
+        document.execCommand("Copy");//执行浏览器复制命令
+    });
+    //复制普通url
+    $('#btn_url').click(function () {
+        var url = document.getElementById("url");
+        url.select();//选择对象
+        document.execCommand("Copy");//执行浏览器复制命令
+    });
 
     // 实例化
     uploader = WebUploader.create({
@@ -87,6 +103,8 @@ jQuery(function() {
         fileSizeLimit: 5 * 1024 * 1024,    // 200 M
         fileSingleSizeLimit: 1 * 1024 * 1024    // 50 M
     });
+
+
 
     // 添加“添加文件”的按钮，
     uploader.addButton({
@@ -342,19 +360,7 @@ jQuery(function() {
                 stats = uploader.getStats();
                 if ( stats.successNum ) {
                     alert( '上传成功' );
-                    var res = eval(json);
-                    if(res.success){
 
-                        var mkUrl = res.urlMarkDown;
-                        var url = res.urlData;
-
-                        $('#mk').attr("value", mkUrl);
-                        $('#url').attr("value", url);
-
-                        var img = document.createElement('img');
-                        img.src = url; //设置上传完图片之后展示的图片
-                        editor.appendChild(img);
-                    }
                 } else {
                     // 没有成功的图片，重设
                     state = 'done';
@@ -365,6 +371,23 @@ jQuery(function() {
 
         updateStatus();
     }
+
+
+    uploader.onUploadSuccess = function(file, data){
+        var res = eval(data);
+        if(res.success){
+
+            var mkUrl = res.urlMarkDown;
+            var url = res.urlData;
+
+            $('#mk').attr("value", mkUrl);
+            $('#url').attr("value", url);
+
+            var img = document.createElement('img');
+            img.src = url; //设置上传完图片之后展示的图片
+            editor.appendChild(img);
+        }
+    };
 
     uploader.onUploadProgress = function( file, percentage ) {
         var $li = $('#'+file.id),

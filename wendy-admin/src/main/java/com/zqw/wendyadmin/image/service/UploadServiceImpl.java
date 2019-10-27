@@ -1,4 +1,4 @@
-package com.zqw.wendyadmin.image;
+package com.zqw.wendyadmin.image.service;
 
 
 import com.zqw.wendyadmin.image.utils.Base64Util;

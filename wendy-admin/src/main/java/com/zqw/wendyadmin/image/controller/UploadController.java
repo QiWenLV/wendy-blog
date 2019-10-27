@@ -1,5 +1,6 @@
-package com.zqw.wendyadmin.image;
+package com.zqw.wendyadmin.image.controller;
 
+import com.zqw.wendyadmin.image.service.UploadService;
 import com.zqw.wendyadmin.image.utils.ImgException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
