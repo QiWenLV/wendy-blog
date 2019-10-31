@@ -2,6 +2,9 @@ package com.zqw.wendyadmin.image.controller;
 
 import com.zqw.wendyadmin.image.service.UploadService;
 import com.zqw.wendyadmin.image.utils.ImgException;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@ApiOperation(value = "/upload", tags = "图片上传")
 @RestController
 @RequestMapping("upload")
 public class UploadController {
@@ -23,6 +27,11 @@ public class UploadController {
     @Autowired
     private UploadService uploadService;
 
+    @ApiOperation(value = "上传文件")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "form", name = "request", value = "request"),
+            @ApiImplicitParam(paramType = "form", name = "file", value = "文件", required = true)
+    })
     @RequestMapping(value = "/headImgUpload", method = RequestMethod.POST)
     public Map<String, Object> headImgUpload(HttpServletRequest request, MultipartFile file) throws IOException {
 

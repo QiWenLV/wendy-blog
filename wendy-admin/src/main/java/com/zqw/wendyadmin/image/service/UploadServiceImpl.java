@@ -1,10 +1,13 @@
 package com.zqw.wendyadmin.image.service;
 
 
+import com.zqw.wendyadmin.image.bean.entity.OssInfo;
 import com.zqw.wendyadmin.image.utils.Base64Util;
 import com.zqw.wendyadmin.image.utils.HttpUtils;
 import com.zqw.wendyadmin.image.utils.ImgException;
 import com.zqw.wendyadmin.image.utils.OSSClientUtil;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +32,6 @@ public class UploadServiceImpl implements UploadService {
             System.out.println("文件大小"+ file.getSize());
         }
         String imgUrl = ossClient.uploadImg2Oss(file);
-
 //        userDao.updateHead(userId, imgUrl);//只是本地上传使用的
         return imgUrl;
     }

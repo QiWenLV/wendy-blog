@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://115.159.59.141:5432/wendy
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+mybatis-plus:
+  global-config:
+    db-config:
+      schema: wendy_blog
+swagger:
+  enable: true
