@@ -3,7 +3,6 @@ package com.zqw.wendyadmin.image.service;
 
 import com.zqw.wendyadmin.image.utils.Base64Util;
 import com.zqw.wendyadmin.image.utils.HttpUtils;
-import com.zqw.wendyadmin.common.exception.ImgException;
 import com.zqw.wendyadmin.image.utils.OSSClientUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
