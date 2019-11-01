@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqw.wendyadmin.image.dao.OssInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zqw.wendyadmin.image.bean.entity.OssInfo">
+    <!--@mbg.generated-->
+    <id column="oss_id" jdbcType="INTEGER" property="ossId" />
+    <result column="oss_name" jdbcType="VARCHAR" property="ossName" />
+    <result column="endpoint" jdbcType="VARCHAR" property="endpoint" />
+    <result column="accesskey_id" jdbcType="VARCHAR" property="accesskeyId" />
+    <result column="accesskey_secret" jdbcType="VARCHAR" property="accesskeySecret" />
+    <result column="bucket_name" jdbcType="VARCHAR" property="bucketName" />
+    <result column="file_dir" jdbcType="VARCHAR" property="fileDir" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="create_by" jdbcType="INTEGER" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="INTEGER" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="detele_flag" jdbcType="BOOLEAN" property="deteleFlag" />
+    <result column="first_flag" jdbcType="BOOLEAN" property="firstFlag" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    oss_id, oss_name, endpoint, accesskey_id, accesskey_secret, bucket_name, file_dir, 
+    remarks, create_by, create_date, update_by, update_date, detele_flag, first_flag, 
+    user_id
+  </sql>
+</mapper>
