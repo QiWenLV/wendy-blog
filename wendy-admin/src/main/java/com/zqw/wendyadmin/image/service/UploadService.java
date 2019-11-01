@@ -1,6 +1,7 @@
 package com.zqw.wendyadmin.image.service;
 
 
+import com.zqw.wendyadmin.common.exception.ImgException;
 import com.zqw.wendyadmin.image.utils.Base64Util;
 import com.zqw.wendyadmin.image.utils.HttpUtils;
 import com.zqw.wendyadmin.image.utils.OSSClientUtil;
