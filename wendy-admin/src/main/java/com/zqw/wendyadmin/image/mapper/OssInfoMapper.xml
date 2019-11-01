@@ -16,10 +16,13 @@
     <result column="update_by" jdbcType="INTEGER" property="updateBy" />
     <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
     <result column="detele_flag" jdbcType="BOOLEAN" property="deteleFlag" />
+    <result column="first_flag" jdbcType="BOOLEAN" property="firstFlag" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     oss_id, oss_name, endpoint, accesskey_id, accesskey_secret, bucket_name, file_dir, 
-    remarks, create_by, create_date, update_by, update_date, detele_flag
+    remarks, create_by, create_date, update_by, update_date, detele_flag, first_flag, 
+    user_id
   </sql>
 </mapper>

@@ -8,27 +8,20 @@ import com.zqw.wendyadmin.common.bean.BeanEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @Classname OssInfo
  * @Description TODO
- * @Date 2019/10/31 21:47
+ * @Date 2019/11/2 1:25
  * @Created by zqw
  * @Version 1.0
  */
 @ApiModel(value = "com.zqw.wendyadmin.image.bean.entity.OssInfo")
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @TableName(value = "oss_info")
 public class OssInfo extends BeanEntity {
-    @TableId(value = "oss_id", type = IdType.AUTO)
+    @TableId(value = "oss_id", type = IdType.INPUT)
     @ApiModelProperty(value = "null")
     private Integer ossId;
 
@@ -98,4 +91,51 @@ public class OssInfo extends BeanEntity {
     @ApiModelProperty(value = "null")
     private Boolean deteleFlag;
 
+    /**
+     * 优先标签
+     */
+    @TableField(value = "first_flag")
+    @ApiModelProperty(value = "优先标签")
+    private Boolean firstFlag;
+
+    /**
+     * 用户id
+     */
+    @TableField(value = "user_id")
+    @ApiModelProperty(value = "用户id")
+    private Integer userId;
+
+    public static final String COL_OSS_ID = "oss_id";
+
+    public static final String COL_OSS_NAME = "oss_name";
+
+    public static final String COL_ENDPOINT = "endpoint";
+
+    public static final String COL_ACCESSKEY_ID = "accesskey_id";
+
+    public static final String COL_ACCESSKEY_SECRET = "accesskey_secret";
+
+    public static final String COL_BUCKET_NAME = "bucket_name";
+
+    public static final String COL_FILE_DIR = "file_dir";
+
+    public static final String COL_REMARKS = "remarks";
+
+    public static final String COL_CREATE_BY = "create_by";
+
+    public static final String COL_CREATE_DATE = "create_date";
+
+    public static final String COL_UPDATE_BY = "update_by";
+
+    public static final String COL_UPDATE_DATE = "update_date";
+
+    public static final String COL_DETELE_FLAG = "detele_flag";
+
+    public static final String COL_FIRST_FLAG = "first_flag";
+
+    public static final String COL_USER_ID = "user_id";
+
+    public static com.zqw.wendyadmin.image.bean.entity.OssInfo.OssInfoBuilder builder() {
+        return new com.zqw.wendyadmin.image.bean.entity.OssInfo.OssInfoBuilder();
+    }
 }

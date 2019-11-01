@@ -5,6 +5,13 @@ import sun.misc.BASE64Encoder;
 import java.io.*;
 import java.util.Base64;
 
+/**
+ * @Classname Base64Util
+ * @Description Base64 图片转码工具
+ * @Date 2019/10/31 21:39
+ * @Created by zqw
+ * @Version 1.0
+ */
 public class Base64Util {
 
     public static String fileToBase64(File file) {

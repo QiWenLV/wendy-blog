@@ -3,6 +3,7 @@ package com.zqw.wendyadmin.image.utils;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
+import com.zqw.wendyadmin.common.exception.ImgException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;

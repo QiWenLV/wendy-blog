@@ -1,7 +1,7 @@
 package com.zqw.wendyadmin.image.controller;
 
+import com.zqw.wendyadmin.common.exception.ImgException;
 import com.zqw.wendyadmin.image.service.UploadService;
-import com.zqw.wendyadmin.image.utils.ImgException;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
